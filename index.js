@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 
 const corsOptions = {
-  origin: process.env.CORS_ALLOWED_ORIGIN || '*',  // ถ้าไม่มีค่าก็อนุญาตจากทุกที่
+  origin: process.env.CORS_ALLOWED_ORIGIN.split(','),  // แปลงค่าจาก .env ให้เป็น array ของโดเมน
 };
 
 app.use(express.json());
